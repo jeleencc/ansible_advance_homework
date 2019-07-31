@@ -1,11 +1,12 @@
 ---
 # vars file for roles/config-tower
-org_name: Default 
+organization_name: Default 
 scm_branch: master 
 scm_url: "{{ github_repo }}"
-proj_name: "Homework Assignment"
+project_name: "Ansible Advance Homework"
 user_name: admin 
 password: r3dh4t1!
+machine_credential_name: machineadmin
 ssh_cred_name: "Connect_to_workstation"
 user_cred_name: "cloud-user"
 user_cred_path: "/root/.ssh/openstack.pem"
