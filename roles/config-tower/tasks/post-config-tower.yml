@@ -27,12 +27,13 @@
 - name: Create tower credential key file
   tower_credential:
     name: "{{ opentlc_cred_name }}"
-    organization: Default
+    organization: "{{org_name}}"
     state: present
     kind: ssh
     tower_host: tower1.{{tower_GUID}}.example.opentlc.com
     tower_username: admin
     tower_password: r3dh4t1!
+    tower_verify_ssl: no
     ssh_key_data: "{{ lookup('file', '/root/.ssh/mykey.pem') }}"
     username: "{{ opentlc_login }}"
 
