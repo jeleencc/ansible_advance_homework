@@ -6,7 +6,7 @@
 
 - name: Create credential to connect to workstation
   command: |
-    tower-cli credential create --name "{{machine_credential_name}}" --organization "Default" --credential-type Machine 
+    tower-cli credential create --name "{{machine_credential_name}}" --organization "{{org_name}}" --credential-type Machine 
 
 - name: Create Inventory
   command: |
