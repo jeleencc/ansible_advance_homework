@@ -25,7 +25,7 @@
 
 - name: Create tower credential key file
   tower_credential:
-    name: Connect_to_workstation
+    name: "{{ opentlc_cred_name }}"
     organization: "{{org_name}}"
     state: present
     kind: ssh
