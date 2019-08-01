@@ -14,7 +14,7 @@
 
 - name: Create Group in static inventory 
   command: |
-    tower-cli group create --inventory "{{static_inventory_name}}"  --name {{group_name}}
+    tower-cli group create --inventory "{{static_inventory_name}}"  --name "{{group_name}}"
 
 - name: Add workstation host in tower_inventory 
   command: |
