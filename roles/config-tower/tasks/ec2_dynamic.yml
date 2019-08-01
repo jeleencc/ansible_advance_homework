@@ -2,7 +2,6 @@
   command: |
     tower-cli inventory create -n "{{ec2_dynamic_inventory}}" --organization "{{org_name}}"
 
-
 - name: Create groups needed to deploy app
   command: |
     tower-cli group create -n "{{ item }}" --inventory "{{ec2_dynamic_inventory}}" 
@@ -16,21 +15,14 @@
     - tag_AnsibleGroup_apps
     - tag_AnsibleGroup_appdbs
 
-- name: Associate AWS tags as children to bastions group
+- name: Associate AWS tags as children to group
   command: |
-    tower-cli group associate --group tag_AnsibleGroup_bastions --parent bastions --inventory "{{ec2_dynamic_inventory}}"
-
-- name: Associate AWS tags as children to frontends group
-  command: |
-    tower-cli group associate --group tag_AnsibleGroup_frontends --parent frontends --inventory "{{ec2_dynamic_inventory}}"
-
-- name: Associate AWS tags as children to apps group
-  command: |
-    tower-cli group associate --group tag_AnsibleGroup_apps --parent apps --inventory "{{ec2_dynamic_inventory}}"
-
-- name: Associate AWS tags as children to appdbs group
-  command: |
-    tower-cli group associate --group tag_AnsibleGroup_appdbs --parent appdbs --inventory "{{ec2_dynamic_inventory}}"
+    tower-cli group associate --group "{{ item.tag }}" --parent "{{ item.parent }}" --inventory "{{ec2_dynamic_inventory}}"
+  loop:
+    - { tag: 'tag_AnsibleGroup_bastions', parent: 'bastions' }
+    - { tag: 'tag_AnsibleGroup_frontends', parent: 'frontends' }
+    - { tag: 'tag_AnsibleGroup_apps', parent: 'apps' }
+    - { tag: 'tag_AnsibleGroup_appdbs', parent: 'appdbs' }
 
 - name: Add localhost as host 
   command: |
