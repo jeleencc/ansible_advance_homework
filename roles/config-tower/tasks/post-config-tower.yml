@@ -45,7 +45,7 @@
     tower_username: "{{user_name}}"
     tower_password: "{{password}}"
     tower_verify_ssl: no
-    ssh_key_data: "{{ lookup('file', '/root/.ssh/openstack.pem') }}" 
+    ssh_key_data: "{{ lookup('file', '/root/.ssh/mykey.pem') }}" 
     username: "{{ opentlc_login }}"    
 
 - name: Remove secret.pem
