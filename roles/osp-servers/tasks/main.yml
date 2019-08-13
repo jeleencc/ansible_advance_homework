@@ -4,7 +4,7 @@
       cloud: ospcloud
       name: "{{ name }}"
       image: rhel-guest
-      meta: "group={{ meta.group }},deployment_name={{ meta.deployment_name }}"
+      meta: "group={{ metagroup }},deployment_name={{ deployment_name }}"
       flavor: "{{ flavor }}"
       security_groups: "{{ security_group }}"
       key_name: ansible_ssh
