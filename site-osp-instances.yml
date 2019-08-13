@@ -6,19 +6,19 @@
   - name: Create frontend instance
     include_role:
        name: osp-servers
-       vars_from: frontend.yml
+       vars_from: vars/frontend.yml
   - name: Create app1 instance
     include_role:
        name: osp-servers
-       vars_from: app1.yml
+       vars_from: vars/app1.yml
   - name: Create app2 instance
     include_role:
        name: osp-servers
-       vars_from: app2.yml
+       vars_from: vars/app2.yml
   - name: Create db instance
     include_role:
        name: osp-servers
-       vars_from: db.yml
+       vars_from: vars/db.yml
   - name: Gather facts
     include_role: 
        name: osp-facts
