@@ -3,7 +3,8 @@
 - name: Fetch Instance Info
   os_server_facts:
     cloud: ospcloud
-    deployment_name: QA
+    filters:
+      deployment_name: QA
   register: openstack_servers
 
 - name: output result
