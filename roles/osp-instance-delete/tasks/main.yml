@@ -6,7 +6,4 @@
   register: openstack_servers
   
 - name: Delete instances
-  os_server:
-    name: "{{ item.name }}"
-    state: absent
-  loop: openstack_servers
+  debug: openstack_servers
