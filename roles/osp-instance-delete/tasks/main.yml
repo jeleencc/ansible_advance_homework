@@ -4,4 +4,9 @@
   os_server_facts:
     cloud: ospcloud
     server: "{{ servername }}"
-  debug: id
+  register: instanceid
+  
+- name: Delete instances
+  os_server:
+    name: "{{ instanceid }}"
+    state: absent
