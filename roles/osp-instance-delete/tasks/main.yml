@@ -4,8 +4,8 @@
   os_server_facts:
     cloud: ospcloud
     server: "{{ servername }}"
-  register: openstack_servers
+  register: id
   
 - name: Delete instances
   debug: 
-    var: openstack_servers
+    var: id
