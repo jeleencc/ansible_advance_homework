@@ -8,5 +8,5 @@
   
 - name: Delete instances
   os_server:
-    server: "{{ servername }}"
+    name: "{{ servername }}"
     state: absent
