@@ -6,4 +6,5 @@
   register: openstack_servers
   
 - name: Delete instances
-  debug: openstack_servers
+  debug: 
+    var: openstack_servers
