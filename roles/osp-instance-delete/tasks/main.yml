@@ -4,5 +4,4 @@
   os_server_facts:
     cloud: ospcloud
     server: "{{ servername }}"
-  debug:
-    var: id
+  debug: id
