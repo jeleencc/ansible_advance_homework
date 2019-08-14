@@ -3,10 +3,10 @@
 - name: Fetch Instance Info
   os_server_facts:
     cloud: ospcloud
-    server: "{{ servername }}"
-  register: instanceid
+  register: openstack_servers
   
 - name: Delete instances
   os_server:
-    name: "{{ instanceid }}"
+    name: "{{ item.name }}"
     state: absent
+  loop: openstack_servers
