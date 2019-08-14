@@ -3,13 +3,8 @@
 - name: Fetch Instance Info
   os_server_facts:
     cloud: ospcloud
-    filters:
-      deployment_name: QA
+    name: "{{ servername }}"
   register: openstack_servers
-
-- name: output result
-  debug:
-    var: openstack_servers
     
 - name: Delete instances
   os_server:
