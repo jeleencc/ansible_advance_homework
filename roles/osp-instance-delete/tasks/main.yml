@@ -5,7 +5,11 @@
     cloud: ospcloud
     deployment_name: QA
   register: openstack_servers
-  
+
+- name: output result
+  debug:
+    var: openstack_servers
+    
 - name: Delete instances
   os_server:
     name: "{{ servername }}"
