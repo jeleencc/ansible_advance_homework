@@ -1,2 +1,5 @@
 ---
 # vars file for lb-tier
+frontend_packages:
+   - httpie
+   - haproxy
