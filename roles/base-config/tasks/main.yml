@@ -1,2 +1,7 @@
 ---
 # tasks file for base-config
+- name: Add repository
+  yum_repository:
+    name: MitziCom 
+    description: MitziCom YUM repo
+    baseurl: http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
