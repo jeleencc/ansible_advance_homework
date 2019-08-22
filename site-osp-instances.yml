@@ -7,6 +7,10 @@
     include_role:
        name: osp-servers
        vars_from: frontend.yml
+  - name: Create app1 instance
+    include_role:
+       name: osp-servers
+       vars_from: app1.yml
   - name: Create app2 instance
     include_role:
        name: osp-servers
@@ -15,10 +19,6 @@
     include_role:
        name: osp-servers
        vars_from: db.yml
-  - name: Create app1 instance
-    include_role:
-       name: osp-servers
-       vars_from: app1.yml
   - name: Gather facts
     include_role: 
        name: osp-facts
