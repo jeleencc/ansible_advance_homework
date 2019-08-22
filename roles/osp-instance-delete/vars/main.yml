@@ -1,3 +1,7 @@
 ---
 # vars file for roles/osp-instance-delete
-servername: app1
+servername:
+- frontend
+- app1
+- app2
+- db
